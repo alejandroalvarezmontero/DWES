@@ -1,0 +1,24 @@
+{
+  "name": "dwes",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alejandroalvarezmontero/DWES.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alejandroalvarezmontero/DWES/issues"
+  },
+  "homepage": "https://github.com/alejandroalvarezmontero/DWES#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.10"
+  }
+}
