@@ -14,5 +14,8 @@
     "bcrypt": "^5.1.0",
     "chalk": "^5.1.2",
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0"
   }
 }
