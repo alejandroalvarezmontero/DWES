@@ -20,5 +20,10 @@
   "homepage": "https://github.com/alejandroalvarezmontero/DWES#readme",
   "dependencies": {
     "node-fetch": "^3.2.10"
+  },
+  "devDependencies": {
+    "ava": "^5.0.1",
+    "nyc": "^15.1.0",
+    "rimraf": "^3.0.2"
   }
 }
