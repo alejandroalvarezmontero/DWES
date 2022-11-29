@@ -1,7 +1,13 @@
-function fizzBuzz(n){
-     let result = '';
-     if(n%3 === 0) result += 'fizz';
-     if(n%5 === 0) result += 'buzz';
-    
-     return result || n;
+function fizzbuzz(number) {
+     if (number % 3 == 0 && number % 5 == 0) {
+       return 'FizzBuzz';
+     } else if (number % 3 == 0) {
+       return 'Fizz';
+     } else if (number % 5 == 0) {
+       return 'Buzz';
+     } else {
+       return number;
      }
+   };
+   
+   module.exports = fizzbuzz;
