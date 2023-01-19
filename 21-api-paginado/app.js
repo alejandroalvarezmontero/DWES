@@ -1,15 +1,15 @@
 const express = require('express');
 const data = require('./data');
-
-// Initialize App
 const app = express();
+const port = process.env.PORT ||3001
 
-// Assign route
-app.use('/', (req, res, next) => {
-res.send('Node.js Search and Filter');
-});
+app.use(express.urlencoded({extended: false}))
+app.use(express.json())
 
-// Start server on PORT 5000
-app.listen(5000, () => {
-console.log('Server started!');
-});
+app.get('/datos', (req,res) =>{
+    res.send(data)
+})
+
+app.listen(port, () =>{
+    console.log(`API Rest corriendo en http://localhost:${port}`)
+})
