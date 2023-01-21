@@ -13,3 +13,6 @@ app.get('/datos', (req,res) =>{
 app.listen(port, () =>{
     console.log(`API Rest corriendo en http://localhost:${port}`)
 })
+
+var todo_items;
+todo_items = [];
