@@ -1,36 +1,21 @@
-"use strict";
-const nodemailer = require("nodemailer");
+ const nodemailer = require("nodemailer");
 
-async function main() {
-  
-  
-  let testAccount = await nodemailer.createTestAccount();
+ async function main() {
+ let transporter = nodemailer.createTransport({
+ host: "127.0.0.1",
+ port: 3000,
+ secure: false,
+ });
 
-  
-  let transporter = nodemailer.createTransport({
-     service: 'gmail',
-     secure: false,
-     auth: {
-     user: process.env.SMTP_USER,
-     pass: process.env.SMTP_PASS
-     }
-    });
+ let info = await transporter.sendMail({
+ from: 'alejandro.alvarezmontero@adaits.es',
+ to: "nose@cual.es",
+ subject: "Mensaje de prueba",
+ text: "Espabila campeón",
+ html: "<h1 style='color: blue'>Este es el HTML</h1>",
+ });
 
-  
-  let info = await transporter.sendMail({
-    from: '"Fred Foo 👻" <foo@example.com>', 
-    to: "bar@example.com, baz@example.com", 
-    subject: "Hello ✔", 
-    text: "Hello world?", 
-    html: "<b>Hello world?</b>", 
-  });
+ console.log("Message sent: %s", info.messageId);
+ }
 
-  console.log("Message sent: %s", info.messageId);
-  
-
- 
-  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-  
-}
-
-main().catch(console.error);
+ main().catch(console.error);
