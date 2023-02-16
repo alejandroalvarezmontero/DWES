@@ -1,5 +1,9 @@
-app.get('/data', getData);
+ const { Router } = require('express');
 
-app.listen(port, () =>{
-    console.log(`API Rest corriendo en http://localhost:${port}`)
-})
+ const users = require('./users');
+
+ const router = Router();
+
+ router.use('/users', users);
+
+ module.exports = router;
