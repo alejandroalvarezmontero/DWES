@@ -1,8 +1,9 @@
 const express = require('express');
-const routes = require ('../routes/routes.js');
-const models = require('../models/users.js');
-const authMiddleware = ('../middleware/auth-middleware');
-const middleware = ('../middleware/error-middleware');
+const routes = require ('./routes/router.js');
+const models = require('./models/users.js');
+const authMiddleware = ('./middleware/auth-middleware');
+const middleware = ('./middleware/error-middleware');
+const services = ('./services/smpt-service.js')
 
 
 

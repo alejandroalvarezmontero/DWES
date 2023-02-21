@@ -44,6 +44,6 @@ const server = new SMTPServer({
 });
 
 // Start the SMTP server
-server.listen(3000, () => {
-  console.log('SMTP server listening on port 3000');
+server.listen(3001, () => {
+  console.log('SMTP server listening on port 3001');
 });

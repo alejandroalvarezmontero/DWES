@@ -1,4 +1,4 @@
- const { mongodbService } = require('../services');
+const { mongodbService } = require('../services/smtp-service.js');
 
  async function getUsers(req, res, next) {
  const filters = req.query;
