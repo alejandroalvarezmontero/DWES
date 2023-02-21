@@ -1,7 +1,7 @@
-const { Mongodb, DataTypes } = require('mongodb');
-const mongodb = new Mongodb('mongodb+srv://alex:Drako09122021@cluster0.fhx0jyq.mongodb.net/?retryWrites=true&w=majority');
+const { MongoClient, DataTypes } = require('mongodb');
+const mongoclient = new MongoClient('mongodb+srv://alex:Drako09122021@cluster0.fhx0jyq.mongodb.net/?retryWrites=true&w=majority');
 
-const User = mongodb.define('user', {
+const User = mongoclient.define('user', {
   id: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -24,12 +24,12 @@ const User = mongodb.define('user', {
   createdAt: {
     type: DataTypes.DATE,
     allowNull: false,
-    defaultValue: Mongodb.NOW
+    defaultValue: MongoClient.NOW
   },
   updatedAt: {
     type: DataTypes.DATE,
     allowNull: false,
-    defaultValue: Mongodb.NOW
+    defaultValue: MongoClient.NOW
   }
 });
 
