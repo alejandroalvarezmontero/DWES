@@ -5,13 +5,17 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cross-env NODE_ENV=production node src/index.js"
+    "start": "nodemon",
+    "deploy": "cross-env NODE_ENV=production node src/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "mongodb": "^5.0.1",
-    "mongoose": "^6.9.2",
+    "mongoose": "^6.10.0",
+    "nodemon": "^2.0.20",
     "smtp-server": "^3.11.0",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^4.6.0",
