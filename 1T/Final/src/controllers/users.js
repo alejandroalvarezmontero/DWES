@@ -1,8 +1,9 @@
-const { mongodbService } = require('../services/smtp-service.js');
+const { mongodbService } = require('../services/mongodb-service');
 
  async function getUsers(req, res, next) {
  const filters = req.query;
- return res.status(200).send({ results: [], filters });
+ const users = mongodbService.getAllUsers();
+ return res.status(200).send(pageMiddleware(user));
  }
 
  function getUserId(req, res, next) {
