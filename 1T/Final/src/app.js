@@ -6,4 +6,4 @@ const app = express();
 
 loaders.init(app, config);
 
-module.exports = app;
+module.exports = app.js;
