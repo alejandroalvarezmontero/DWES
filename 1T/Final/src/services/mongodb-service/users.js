@@ -1,4 +1,6 @@
-function createUser(params) {
+const User = require('../models/user');
+
+function createUser(req, res) {
 
     const mongodb = require('mongodb');
   
@@ -38,9 +40,18 @@ function createUser(params) {
   }
   
 
-function getAllUsers(params) {
-    
-}
+  
+
+  function getAllUsers(req, res) {
+    User.find({}, (err, users) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send('Error del servidor');
+      } else {
+        res.json(users);
+      }
+    });
+  }
 
 module.exports = {
     createUser,

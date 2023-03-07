@@ -1,9 +1,9 @@
 const { mongodbService } = require('../services/mongodb-service');
 
- async function getUsers(req, res, next) {
+ async function getAllUsers(req, res, next) {
  const filters = req.query;
  const users = mongodbService.getAllUsers();
- return res.status(200).send(pageMiddleware(user));
+ return res.status(200).send(pageMiddleware(users));
  }
 
  function getUserId(req, res, next) {
@@ -16,7 +16,7 @@ const { mongodbService } = require('../services/mongodb-service');
  }
 
  module.exports = {
- getUsers,
+ getAllUsers,
  getUserId,
  createUser,
 };
