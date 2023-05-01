@@ -21,10 +21,6 @@ const productoSchema = new mongoose.Schema({
     min: 0
   },
   imageUrl: String,
-  createdAt: {
-    type: Date,
-    default: Date.now
-  }
-});
+},{timestamps:true});
 
 module.exports = mongoose.model('Producto', productoSchema);

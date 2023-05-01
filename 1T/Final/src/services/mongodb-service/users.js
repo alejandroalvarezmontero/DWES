@@ -5,7 +5,7 @@ function createUser(req, res) {
     const mongodb = require('mongodb');
   
     const Mongoose = mongodb.Mongoose;
-    const url = 'mongodb://localhost:27017';
+    const url = 'mongodb+srv://alex:Drako09122021@cluster0.fhx0jyq.mongodb.net/?retryWrites=true&w=majority';
     const mongodbName = 'myDatabase';
   
 

@@ -3,7 +3,7 @@ const ObjectId = require('mongodb').ObjectId;
 const mongoose = require('mongoose');
 
 const facturaSchema = new mongoose.Schema({
-  customer: {
+  editor: {
     type: String,
     required: true
   },
@@ -12,11 +12,11 @@ const facturaSchema = new mongoose.Schema({
       type: String,
       required: true
     },
-    quantity: {
+    cantidad: {
       type: Number,
       required: true
     },
-    price: {
+    precio: {
       type: Number,
       required: true
     }

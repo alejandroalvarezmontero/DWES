@@ -1,14 +1,13 @@
 const SMTPServer = require('smtp-server').SMTPServer;
 const nodemailer = require('nodemailer');
 
-// Set up SMTP server configuration
 const server = new SMTPServer({
-  authOptional: false, // require authentication
+  authOptional: false, 
   onAuth(auth, session, callback) {
     if (auth.username === 'user' && auth.password === 'password') {
       return callback(null, { user: 'user' });
     }
-    return callback(new Error('Invalid username or password'));
+    return callback(new Error('La contraseña o el usuario esta mal'));
   },
   onData(stream, session, callback) {
     let message = '';
@@ -17,7 +16,7 @@ const server = new SMTPServer({
     });
     stream.on('end', () => {
       const transporter = nodemailer.createTransport({
-        host: 'smtp.example.com',
+        host: 'alejandro.alvarezmontero@adaits.es',
         port: 587,
         secure: false,
         auth: {
@@ -28,14 +27,14 @@ const server = new SMTPServer({
       const mailOptions = {
         from: 'alejandro.alvarezmontero@adaits.es',
         to: 'destination@example.com',
-        subject: 'New email received',
+        subject: 'Nuevo email',
         text: message,
       };
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           console.error(error);
         } else {
-          console.log('Email forwarded successfully: ' + info.response);
+          console.log('Email guardado: ' + info.response);
         }
       });
       callback();
@@ -43,7 +42,6 @@ const server = new SMTPServer({
   },
 });
 
-// Export the SMTP server as a module
 module.exports = {
   start: (port) => {
     server.listen(port, () => {
